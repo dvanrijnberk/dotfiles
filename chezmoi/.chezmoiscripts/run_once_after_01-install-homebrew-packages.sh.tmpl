@@ -14,6 +14,7 @@ echo "🍺 Install macOS homebrew packages"
 set -eufo pipefail
 
 {{ $taps := list
+  "warrensbox/tap"
 -}}
 
 {{ $brews := list
@@ -32,7 +33,6 @@ set -eufo pipefail
   "helm"
   "k9s"
   "kubecm"
-  "kubens"
   "kubectx"
   "kubelogin"
   "tfswitch"
