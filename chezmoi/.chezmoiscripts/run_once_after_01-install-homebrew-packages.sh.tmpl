@@ -1,0 +1,54 @@
+{{- if (eq .chezmoi.os "darwin") -}}
+#!/bin/sh
+
+
+# Keep-alive: update existing `sudo` time stamp until the script finished
+while true; do
+	sudo -n true
+	sleep 60
+	kill -0 "$$" || exit
+done 2>/dev/null &
+
+echo "🍺 Install macOS homebrew packages"
+
+set -eufo pipefail
+
+{{ $taps := list
+  "homebrew/cask-fonts"
+-}}
+
+{{ $brews := list
+  "chezmoi"
+  "git"
+  "git-absorb"
+  "git-crypt"
+  "git-extras"
+  "git-lfs"
+  "jq"
+-}}
+
+{{ $casks := list
+  "1password"
+  "1password-cli"
+  "font-jetbrains-mono-nerd-font"
+  "visual-studio-code"
+  "font-hack-nerd-font"
+-}}
+
+{{ output "/opt/homebrew/bin/brew" "shellenv" | trim }}
+
+brew bundle --no-lock --file=/dev/stdin <<EOF || :
+{{ range ($taps | sortAlpha | uniq) -}}
+tap "{{ . }}"
+{{ end }}
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end }}
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end }}
+EOF
+
+# Extra homebrew setup
+/opt/homebrew/opt/fzf/install --all
+{{ end -}}
