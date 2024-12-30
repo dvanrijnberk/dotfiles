@@ -90,8 +90,12 @@ style = "bg:#FCA17D"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
+disabled = false
 style = "bg:#FCA17D"
 format = '[$all_status$ahead_behind ]($style)'
+
+[git_commit]
+disabled = false
 
 [golang]
 symbol = " "
@@ -152,3 +156,9 @@ format = '[$symbol](bright-black) [$context( \($namespace\))]($style)'
 context_pattern = "^production$"
 context_alias = "production"
 style = "green"
+
+[azure]
+disabled = false
+format = 'on [$symbol($subscription)]($style) '
+symbol = '󰠅 '
+style = 'blue bold'
