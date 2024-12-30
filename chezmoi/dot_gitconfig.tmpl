@@ -1,0 +1,12 @@
+[user]
+    email = {{ .email }}
+    name = {{ .name }}
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEhg+CtKvRN8DBQ1nBuAB78dG9LuFOPC510QzEiYT9Mq
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+    gpgsign = true
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
