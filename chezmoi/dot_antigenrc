@@ -13,6 +13,7 @@ antigen bundle command-not-found
 antigen bundle colorize
 antigen bundle safe-paste
 antigen bundle thefuck
+antigen bundle kubectl
 
 # Additional bundles
 antigen bundle zsh-users/zsh-syntax-highlighting
