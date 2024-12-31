@@ -1,0 +1,5 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "{{ .chezmoi.homeDir }}/.config/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+{{ end -}}
