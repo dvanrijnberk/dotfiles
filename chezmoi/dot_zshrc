@@ -7,6 +7,11 @@ eval "$(brew shellenv)"
 source /opt/homebrew/share/antigen/antigen.zsh
 antigen init ~/.antigenrc
 
+#Aliases
+alias kctx="kubectx"
+alias kns="kubens"
+
+
 eval $(thefuck --alias)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
