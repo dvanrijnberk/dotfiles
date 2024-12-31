@@ -2,7 +2,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-source $HOMEBREW_PREFIX/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 antigen init ~/.antigenrc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
