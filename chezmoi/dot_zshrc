@@ -5,6 +5,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source /opt/homebrew/share/antigen/antigen.zsh
 antigen init ~/.antigenrc
 
+eval $(thefuck --alias)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
