@@ -37,6 +37,7 @@ set -eufo pipefail
   "Azure/kubelogin/kubelogin"
   "tfswitch"
   "starship"
+  "antigen"
 -}}
 
 {{ $casks := list
@@ -69,4 +70,7 @@ EOF
 
 # Extra homebrew setup
 /opt/homebrew/opt/fzf/install --all
+
+# Install antigen
+curl -L git.io/antigen > ~/antigen.zsh
 {{ end -}}
