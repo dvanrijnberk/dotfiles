@@ -2,6 +2,8 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+eval "$(brew shellenv)"
+
 source /opt/homebrew/share/antigen/antigen.zsh
 antigen init ~/.antigenrc
 
